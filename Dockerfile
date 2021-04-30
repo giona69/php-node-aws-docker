@@ -1,4 +1,4 @@
-FROM circleci/php:7.3-node-browsers
+FROM circleci/php:7.4-node-browsers
 
 RUN \
 sudo apt-get update && \
@@ -18,7 +18,10 @@ RUN \
 sudo npm install gulp-cli -g
 
 RUN \
-sudo npm install now@latest -g --unsafe-perm
+sudo npm install vercel@latest -g --unsafe-perm
+
+RUN \
+sudo pip install pyrsistent==0.16.0
 
 RUN \
 sudo pip install awsebcli
